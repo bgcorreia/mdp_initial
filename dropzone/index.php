@@ -13,7 +13,7 @@
 <body>
  
 <!-- 3 -->
-<form action="upload_grande.php" class="dropzone"></form>
+<form action="upload_dropzone.php" class="dropzone"></form>
 
 </body>
  

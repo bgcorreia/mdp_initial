@@ -46,7 +46,7 @@ if ($_UP['renomeia'] == true) {
 // Depois verifica se é possível mover o arquivo para a pasta escolhida
 if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'] . $nome_final)) {
   // Upload efetuado com sucesso, exibe uma mensagem e um link para o arquivo
-  echo "Upload efetuado com sucesso!";
+  echo "Upload efetuado com sucesso! ";
   echo '<a href="' . $_UP['pasta'] . $nome_final . '">Clique aqui para acessar o arquivo</a>' . "\n\n";
 
   $delm="\t";
@@ -72,11 +72,18 @@ if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'] . $nome_fin
     // Remove duplicates class and organize id values 
     $arrayClass = array_values(array_unique($arrayClass_before));
 
+    echo "<br/><br/>";
+    echo "<b> Class in file: </b><br/>";
+
     // Show class
     foreach ($arrayClass as $item) {
-      echo $item . "\n";
+      echo $item . "<br/>";
     }
-    
+
+    echo "<br/>";
+
+    echo '<a href="/simple">Novo upload</a>';
+
   }
 
 } else {
