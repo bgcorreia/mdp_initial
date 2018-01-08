@@ -27,7 +27,10 @@ if ($_FILES['file']['error'] != 0) {
 
 // Caso script chegue a esse ponto, não houve erro com o upload e o PHP pode continuar
 // Faz a verificação da extensão do arquivo
-$extensao = strtolower(end(explode('.', $_FILES['file']['name'])));
+$preextensao = explode('.', $_FILES['file']['name']);
+// Se fizer tudo direto o php retorna um erro
+// PHP Notice:  Only variables should be passed by reference 
+$extensao = strtolower(end($preextensao));
 if (array_search($extensao, $_UP['extensoes']) === false) {
   echo "Por favor, envie arquivos com as seguintes extensões: jpg, png ou gif";
   exit;
@@ -42,8 +45,8 @@ if ($_UP['tamanho'] < $_FILES['file']['size']) {
 // O arquivo passou em todas as verificações, hora de tentar movê-lo para a pasta
 // Primeiro verifica se deve trocar o nome do arquivo
 if ($_UP['renomeia'] == true) {
-  // Cria um nome baseado no UNIX TIMESTAMP atual e com extensão .jpg
-  $nome_final = md5(time()).'.jpg';
+  // Cria um nome baseado no UNIX TIMESTAMP atual e com extensão .tsv
+  $nome_final = md5(time()).'.tsv';
 } else {
   // Mantém o nome original do arquivo
   $nome_final = $_FILES['file']['name'];
@@ -82,7 +85,7 @@ if (move_uploaded_file($_FILES['file']['tmp_name'], $_UP['pasta'] . $nome_final)
     foreach ($arrayClass as $item) {
       echo $item . "\n";
     }
-    
+
   }
 
 } else {
