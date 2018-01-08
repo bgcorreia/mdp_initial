@@ -1,6 +1,6 @@
 <?php
 // Pasta onde o arquivo vai ser salvo
-$_UP['pasta'] = 'uploads_limpo/';
+$_UP['pasta'] = 'uploads/';
 // Tamanho máximo do arquivo (em Bytes)
 $_UP['tamanho'] = 1024 * 1024 * 2; // 2Mb
 // Array com as extensões permitidas

@@ -9,7 +9,7 @@ $_UP['tamanho'] = 1024 * 1024 * 2; // 2Mb
 // Array com as extensões permitidas
 $_UP['extensoes'] = array('jpg', 'png', 'gif', 'tsv');
 
-// Renomeia o arquivo? (Se true, o arquivo será salvo como .jpg e um nome único)
+// Renomeia o arquivo? (Se true, o arquivo será salvo como .tsv e um nome único)
 $_UP['renomeia'] = false;
 
 // Array com os tipos de erros de upload do PHP
@@ -32,7 +32,7 @@ $preextensao = explode('.', $_FILES['file']['name']);
 // PHP Notice:  Only variables should be passed by reference 
 $extensao = strtolower(end($preextensao));
 if (array_search($extensao, $_UP['extensoes']) === false) {
-  echo "Por favor, envie arquivos com as seguintes extensões: jpg, png ou gif";
+  echo "Por favor, envie arquivos com as seguintes extensões: jpg, png, gif ou tsv";
   exit;
 }
 
