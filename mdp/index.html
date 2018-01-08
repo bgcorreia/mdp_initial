@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>MDP</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,400i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/global.css">
+</head>
+<body>
+	<div id="main">
+	<div class="container">
+		<div id="base">
+			<nav class="navbar navbar-expand-lg navbar-light bg-white">
+				<a class="navbar-brand" href="#"><img src="assets/images/mdp.png" width="120" alt=""></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fa fa-th-list" aria-hidden="true"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="btn btn-outline-primary" href="index.html">Run (All Genes)</a>
+						</li>
+						<li class="nav-item">
+							<a class="btn btn-outline-primary" href="pathways.html">Run (Pathways)</a>
+						</li>
+						<li class="nav-item">
+							<a class="btn btn-outline-primary" href="#">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="btn btn-outline-primary" href="#">Tutorial</a>
+						</li>									      
+					</ul>
+				</div>
+			</nav>
+
+			<div id="slide">
+				<h1>Titulo da página</h1>
+				<p>Descrição da página</p>
+			</div>
+			<div id="baseButtons">
+				<a href="#" class="buttonsCreate"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+ Create plot</a>
+ 				<div class="separate"></div>
+				<a href="#" class="buttonsCreate"><i class="fa fa-download" aria-hidden="true"></i>
+ Download</a>
+			</div>
+			<div id="forms">
+				<div class="alert alert-primary" role="alert">
+	  				To show all plots you have to <b>upload</b> the input files
+				</div>				
+				<form action="">
+					<h3><i class="fa fa-file-text-o" aria-hidden="true"></i>
+ Inputs</h3>
+					<p>Select the files that the inputs ask you</p>
+					<div class="dropdown-divider"></div>
+					<div class="form-group">
+						<label for="expressionData">Expression Data</label>
+						<div class="baseFile">
+							<input type="file" class="form-control-file" id="expressionData">
+							<div class="buttonFile">Browser</div>
+							<span>No file selected</span>
+						</div>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<small id="dataHelp" class="form-text text-muted"><a href="#">Click here</a> to see a exemple</small>
+					</div>
+					<div class="form-group">
+						<label for="phenotypic">Phenotypic Data</label>
+						<div class="baseFile">
+							<form action="upload_dropzone.php" method="POST" enctype="multipart/form-data">
+								<input type="file" class="form-control-file" id="phenotypic">
+								<div class="buttonFile">Browser</div>
+								<span>No file selected</span>
+							</form>
+						</div>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" style="width: 87%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>						
+						<small id="phenoHelp" class="form-text text-muted"><a href="#">Click here</a> to see a exemple</small>
+					</div>
+					<div class="form-group bottomSpace">
+						<label for="average">Select the parameter</label>
+						<select class="form-control" id="average">
+							<option>healthy</option>
+							<option>TB_Active</option>
+							<option>TB_Latent</option>
+						</select>
+					</div>					
+					<h3><i class="fa fa-list" aria-hidden="true"></i> Parameters</h3>
+					<p>Select the parameters that the inputs ask you</p>
+					<div class="dropdown-divider"></div>
+					<div class="form-group">
+						<label for="average">Statistics average method</label>
+						<select class="form-control" id="average">
+						<option>Median</option>
+						<option>Mean</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="average">Standart deviation</label>
+						<select class="form-control" id="average">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						</select>
+					</div>						
+					<div class="form-group">
+						<label for="average">Top perturbed genes (<i class="fa fa-percent" aria-hidden="true"></i>)</label>
+						<select class="form-control" id="average">
+						<option>0.05</option>
+						<option>0.1</option>
+						<option>0.15</option>
+						<option>0.2</option>
+						<option>0.25</option>
+						<option>0.30</option>
+						<option>0.35</option>
+						<option>0.40</option>
+						<option>0.45</option>
+						<option>0.50</option>						
+						<option>0.55</option>
+						<option>0.6</option>
+						<option>0.65</option>
+						<option>0.7</option>
+						</select>
+					</div>									
+				</form>
+			</div>
+
+		</div>
+	</div>
+	</div>
+</body>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="assets/js/global.js"></script>
+
+</html>
