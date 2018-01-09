@@ -22,7 +22,7 @@ if ($_FILES['arquivo']['error'] != 0) {
   exit; // Para a execução do script
 }
 
-/*
+
 // Caso script chegue a esse ponto, não houve erro com o upload e o PHP pode continuar
 // Faz a verificação da extensão do arquivo
 $preextensao = explode('.', $_FILES['arquivo']['name']); 
@@ -30,10 +30,11 @@ $preextensao = explode('.', $_FILES['arquivo']['name']);
 // PHP Notice:  Only variables should be passed by reference 
 $extensao = strtolower(end($preextensao));
 if (array_search($extensao, $_UP['extensoes']) === false) {
-  echo "Por favor, envie arquivos com as seguinte(s) extensõe(s): tsv";
+  $json['error'] = "Por favor, envie arquivos com as seguinte(s) extensõe(s): tsv";
+  echo json_encode($json);
   exit;
 }
-*/
+
 
 // Faz a verificação do tamanho do arquivo
 if ($_UP['tamanho'] < $_FILES['arquivo']['size']) {
